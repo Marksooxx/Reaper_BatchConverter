@@ -8,16 +8,16 @@
 graph TD
     Start((开始)) --> UserConfig[用户配置读取];
     UserConfig --> Init[初始化环境];
-    Init --> ListPresets[1. 列出预设文件];
-    ListPresets --> UserSelectPreset[2. 用户选择预设];
-    UserSelectPreset --> ReadConfig[3. 读取CONFIG块];
-    ReadConfig --> PreparePathsAndPattern[4. 准备路径与处理模式];
-    PreparePathsAndPattern --> ValidateReaper[5. 校验Reaper路径];
-    ValidateReaper --> ScanAudio[6. 扫描音频文件];
-    ScanAudio --> GenerateTempConfig[7. 生成临时Config文件];
-    GenerateTempConfig --> CallReaper[8. 调用REAPER批处理];
-    CallReaper --> Cleanup[9. 清理临时文件];
-    Cleanup --> DecideReplacement[10. 判断是否替换输出];
+    Init --> ListPresets[1 - 列出预设文件];
+    ListPresets --> UserSelectPreset[2 - 用户选择预设];
+    UserSelectPreset --> ReadConfig[3 - 读取CONFIG块];
+    ReadConfig --> PreparePathsAndPattern[4 - 准备路径与处理模式];
+    PreparePathsAndPattern --> ValidateReaper[5 - 校验Reaper路径];
+    ValidateReaper --> ScanAudio[6 - 扫描音频文件];
+    ScanAudio --> GenerateTempConfig[7 - 生成临时Config文件];
+    GenerateTempConfig --> CallReaper[8 - 调用REAPER批处理];
+    CallReaper --> Cleanup[9 - 清理临时文件];
+    Cleanup --> DecideReplacement[10 - 判断是否替换输出];
     DecideReplacement -- 是 --> AttemptReplace[执行文件替换];
     DecideReplacement -- 否 --> EndMessage[输出最终信息];
     AttemptReplace --> EndMessage;
