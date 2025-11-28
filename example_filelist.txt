@@ -1,0 +1,33 @@
+# REAPER Batch Converter - 文件列表示例
+#
+# 使用方法：
+# python Reaper_BatchConverter_v2.py --file-list example_filelist.txt -p "MyPreset"
+#
+# 格式说明：
+# - 每行一个文件路径
+# - 支持绝对路径或相对路径
+# - 以 # 开头的行为注释（会被忽略）
+# - 空行会被忽略
+# - ⚠️ 路径中不要包含空格！
+
+# === 示例 1: 绝对路径 ===
+# D:/Audio/vocal_main.wav
+# D:/Audio/vocal_harmony.wav
+# D:/Audio/bass.wav
+
+# === 示例 2: 相对路径（相对于本文件所在目录）===
+# audio/file1.wav
+# audio/file2.wav
+# audio/file3.wav
+
+# === 示例 3: 相对路径（如果使用了 -d 参数，则相对于指定目录）===
+# 运行时使用：python Reaper_BatchConverter_v2.py --file-list example_filelist.txt -d D:/MyProject/Audio
+# vocal_main.wav
+# vocal_harmony.wav
+# bass.wav
+# drums.wav
+
+# === 你的文件列表（取消注释下面的行并修改为实际路径）===
+# file1.wav
+# file2.wav
+# file3.wav
